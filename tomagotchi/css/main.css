@@ -1,0 +1,116 @@
+#container {
+    border: 1px solid black;
+}
+
+#titleScreen {
+    height:400px;
+    background-image: url("../assets/grass_template2.jpg");
+}
+
+#tomagotchi-logo {
+    width:450px;
+    height: 130px;
+    position: relative;
+    background-image: url(../assets/Tamagotchi_Logo.png);
+    background-size: cover;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+#startAnim {
+    height:48px;
+    width:70px;
+    position: relative;
+    background-image: url(../assets/Dog_Wag.gif);
+    /* transform: rotateY(180deg); */
+    margin-top:40px;
+}
+
+#game {
+    height:400px;
+    background-image: url("../assets/woodTile.jpg");
+    background-size: 206px;
+    visibility: hidden;
+    position:absolute;   /*CHANGE TO STATIC WHEN GAME STARTS */
+    z-index: -1;
+}
+
+#buttonDiv {
+    padding: 25px;
+}
+
+#environment {
+    border-right: 2px solid #3E290F;
+    border-left: 2px solid #3E290F;
+    height: 100%;
+    background-image: url("../assets/grass_template2.jpg");
+    background-size: cover;
+}
+
+#start {
+    border: 3px solid #483320;
+    display: block;
+    margin: 0 auto;
+    background-color: #AE6A3B;
+    line-height: .9em;
+    width:200px;
+    height:50px;
+    color: #483320;
+    font-size: 25px;
+}
+
+#start:hover{
+    background-color: #975C32;
+}
+
+#character {
+    height:48px;
+    width:73px;
+    position: relative;
+}
+
+#status {
+    border: 1px solid black;
+}
+
+aside {
+    border: 1px solid black;
+}
+
+#progressCol {
+    padding: 0px;
+    border: 0px solid green;
+}
+
+#buttonCol {
+    padding: 0px;
+    border: 0px solid green;
+}
+
+.progress {
+    border: 2px solid #3E290F;
+}
+
+#buttons {
+    padding: 0px;
+}
+
+#buttons li{
+    list-style: none;
+}
+
+#buttons button {
+    width:100px;
+    line-height: .9em;
+    border: 2px solid #3E290F;
+}
+
+#age {
+    position: absolute;
+    left: 10;
+    bottom: 0;
+}
+
+#idk, #idkBar {
+    visibility: hidden;
+}

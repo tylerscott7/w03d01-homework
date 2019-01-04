@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" type="text/css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+
+            <!-- TOP BUTTON CONTAINER -->
+            <div class="row mx-auto" id="titleScreen">
+                <div class="col-12" id="buttonDiv">
+                    <div id="tomagotchi-logo">
+                    </div>
+                    <button id="start" type="button" class="btn btn-primary"><span>START GAME</span></button>
+                    <div id="startAnim">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row" id="game">
+
+                <!-- BUTTON COLUMN -->
+                <div class="col-2" id="buttonCol">
+                    <div id="buttonContainer" class="col text-center mx-auto">
+                        <ul id="buttons">
+                            <li class="my-3">
+                                <button id="feed" type="button" class="btn btn-primary" style="height:30px"><span>Feed</span></button>
+                            </li>
+                            <li class="my-3">
+                                <button id="play" type="button" class="btn btn-success" style="height:30px"><span>Play</span></button>
+                            </li>
+                            <li class="my-3">
+                                <button id="exercise" type="button" class="btn btn-info" style="height:30px"><span>Exercise</span></button>
+                            </li> 
+                            <li class="my-3">
+                                <button id="idk" type="button" class="btn btn-dark" style="height:30px"><span>IDK</span></button>
+                            </li>     
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-2" id="progressCol">
+                    <ul class="p-0">
+                        <li class="progress my-3 mr-3" style="height:30px">
+                            <div id="hunger" class="align-items-start progress-bar progress-bar-success progress-bar-striped progress-bar-animated bg-primary" role="progressbar"
+                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                                <span class="pl-2">HUNGER</span>
+                            </div>
+                        </li>
+                        
+                        <li class="progress my-3 mr-3" style="height:30px">
+                            <div id="boredom" class="align-items-start progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
+                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                            <span class="pl-2">BOREDOM</span>
+                            </div>
+                        </li>
+                        
+                        <li class="progress my-3 mr-3" style="height:30px">
+                            <div id="sleepiness" class="align-items-start progress-bar progress-bar-warning progress-bar-striped progress-bar-animated bg-info" role="progressbar"
+                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                            <span class="pl-2">TIREDNESS</span>
+                            </div>
+                        </li>
+                        
+                        <li id="idkBar" class="progress my-3 mr-3" style="height:30px">
+                            <div class="progress-bar progress-bar-danger progress-bar-striped progress-bar-animated bg-dark" role="progressbar"
+                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                                IDK
+                            </div>
+                        </li>    
+                    </ul>    
+                </div>
+        
+                <!-- TOMAGOTCHI ENVIRONMENT -->
+                <div class="col-7" id="environment">
+                    <div id="character"></div>
+                    <div id="age">
+                        <h1 id="charAge">Age : 0</h1>
+                    </div>
+                </div>
+        
+                <!-- RIGHT COLUMN -->
+                <!-- <div class="col-3" id="buttons">
+                </div> -->
+
+            </div>
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="js/tomagotchi.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

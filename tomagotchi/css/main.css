@@ -111,6 +111,15 @@ aside {
     bottom: 0;
 }
 
-#idk, #idkBar {
+#idkBar {
+    visibility: hidden;
+}
+
+#newGame {
+    position: absolute;
+    left: 43%;
+    bottom: 50%;
+    line-height: .9em;
+    padding-left:6px;
     visibility: hidden;
 }

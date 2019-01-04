@@ -18,7 +18,7 @@ class Tomagotchi {
         this.runAnim = "url('assets/Dog_run.gif')"
         this.sitAnim = "url('assets/Dog_sitting.gif')"
         this.wagAnim = "url('assets/Dog_Wag.gif')"
-        this.deadSprite = "";
+        this.deadSprite = "url('assets/Dog_dead.png')";
     }
     feed(){
         // We feed this dude
@@ -31,7 +31,8 @@ class Tomagotchi {
     }
     kill(){
         // This is pretty self-explanatory
-
+        this.$location.css("background-image", this.deadSprite);
+        this.$location.css("transform", "rotateX(180deg)");
     }
     getOlder(){
         this.age++;

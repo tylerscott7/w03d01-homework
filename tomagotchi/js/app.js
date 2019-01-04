@@ -82,28 +82,44 @@ function init() {
 
     // SET ON CLICK EVENTS FOR ALL BUTTONS
     $('#feed, #play, #exercise').on('click', function(){
-        if ($(this).attr("id")=="feed") {
-            if (player1.hunger < 40){
-                player1.hunger = 0;
-            } else {
-                player1.hunger -= 40;
-            }
-            $('#hunger').attr('style','width:'+player1.hunger+'%');
-        } else if ($(this).attr("id")=="play") {
-            if (player1.boredom < 20){
-                player1.boredom = 0;
-            } else {
-                player1.boredom -= 20;
-            }
-            $('#boredom').attr('style','width:'+player1.boredom+'%');
-        } else if ($(this).attr("id")=="exercise") {
-            if (player1.sleepiness < 20){
-                player1.sleepiness = 0;
-            } else {
-                player1.sleepiness -= 20;
-            }
-            $('#sleepiness').attr('style','width:'+player1.sleepiness+'%');
+        if (player1.alive) {
+            if ($(this).attr("id")=="feed") {
+                if (player1.hunger < 40){
+                    player1.hunger = 0;
+                } else {
+                    player1.hunger -= 40;
+                }
+                $('#hunger').attr('style','width:'+player1.hunger+'%');
+            } else if ($(this).attr("id")=="play") {
+                if (player1.boredom < 20){
+                    player1.boredom = 0;
+                } else {
+                    player1.boredom -= 20;
+                }
+                $('#boredom').attr('style','width:'+player1.boredom+'%');
+            } else if ($(this).attr("id")=="exercise") {
+                if (player1.sleepiness < 20){
+                    player1.sleepiness = 0;
+                } else {
+                    player1.sleepiness -= 20;
+                }
+                $('#sleepiness').attr('style','width:'+player1.sleepiness+'%');
+            }    
         }
+    });
+
+    $('#lightOn, #lightOff').on('click', function(){
+        if (environment.daylight && $(this).attr("id")=="lightOff"){
+            $('#environment').css("filter","brightness(50%)")
+            environment.daylight = false;
+        } else if (!environment.daylight && $(this).attr("id")=="lightOn"){
+            $('#environment').css("filter","brightness(100%)")
+            environment.daylight = true;
+        }
+    });
+
+    $('#newGame').on('click', function(){
+        window.location.reload();
     });
 }
 
@@ -111,7 +127,9 @@ function init() {
 function endGame() {
     // Stop changing hunger and age
     clearInterval(gameLoop);
-
+    player1.alive = false;
+    player1.kill();
+    $('#newGame').css("visibility","visible");
 }
 
 function timer(){
@@ -169,7 +187,7 @@ function animateChar(){
 
 function checkIfMaxed(){
     if (player1.hunger >= 100 || player1.sleepiness >= 100 || player1.boredom >= 100 ){
-        setTimeout(function() {alert("OH SNAP YOU DEAD!")},500);
+        endGame();
     }
 }
 
